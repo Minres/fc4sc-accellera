@@ -22,8 +22,8 @@
 
                Date: 2018-Feb-20
 ******************************************************************************/
-#ifndef UCIS_PRINTER_HPP
-#define UCIS_PRINTER_HPP
+#ifndef XML_PRINTER_HPP
+#define XML_PRINTER_HPP
 
 #include "fc4sc_base.hpp"
 
@@ -403,8 +403,9 @@ public:
              << "\" \n";
       stream << "> \n";
 
-      for (unsigned int i = 0; i < base.get_cross_bins().size(); i++) 
-       stream << "<index>" << 0 << "</index>\n";
+      stream << "<index>" << 0 << "</index>\n"; // at least one index is required
+      for (unsigned int i = 1; i < base.get_cross_bins().size(); i++)
+        stream << "<index>" << 0 << "</index>\n";
 
       stream << "<contents \n";
       stream << "coverageCount=\"" << 0 << "\"> \n";
